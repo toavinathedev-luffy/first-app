@@ -4,8 +4,12 @@ import { HomeComponent } from './home/home.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
-  template: `<h1>Hello world</h1>`,
+  imports: [HomeComponent],
+  template: `<main>
+    <header class="brand-name">
+      <img src="/assets/logo.svg" alt="logo" aria-hidden="true"class="brand-logo">
+    </header>
+  </main>`,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
