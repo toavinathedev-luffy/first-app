@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
     <header class="brand-name">
       <img src="/assets/logo.svg" alt="logo" aria-hidden="true"class="brand-logo">
     </header>
+    <section class="content">
+      <app-home></app-home>
+    </section>
   </main>`,
   styleUrls: ['./app.component.css'],
 })
