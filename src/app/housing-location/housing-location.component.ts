@@ -6,7 +6,7 @@ import { HousingLocation } from '../housing-location-interf';
   selector: 'app-housing-location',
   standalone: true,
   imports: [CommonModule],
-  template: `LOREM
+  template: `
     <section class="listing">
       <img
         [src]="housingLocation.photo"
@@ -17,7 +17,8 @@ import { HousingLocation } from '../housing-location-interf';
       <p class="listing-location">
         {{ housingLocation.city }},{{ housingLocation.state }}
       </p>
-    </section> `,
+    </section>
+  `,
   styleUrls: ['./housing-location.component.css'],
 })
 export class HousingLocationComponent {
