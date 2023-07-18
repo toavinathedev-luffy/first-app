@@ -1,0 +1,24 @@
+.listing-photos {
+    height:600px;
+    width:50%;
+    object-fit: cover;
+    border-radius: 30px;
+    float:right;
+}
+.listing-heading {
+    font-size: 48pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.listing-location::before {
+    font-size: 48pt;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.listing-location {
+    font-size: 24pt;
+    margin-bottom: 15px;
+}
+.listing-features > section-heading {
+    colo
+}
