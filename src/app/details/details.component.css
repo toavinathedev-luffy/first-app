@@ -20,5 +20,5 @@
     margin-bottom: 15px;
 }
 .listing-features > section-heading {
-    colo
+    color:var(--secondary-color);
 }
