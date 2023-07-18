@@ -12,6 +12,7 @@ import { HousingLocation } from '../housing-location-interf';
     <img
       [src]="housingLocation?.photo"
       alt="Exterior photo of {{ housingLocation?.name }}"
+      class="listing-photo"
     />
     <section class="listing-description">
       <h2 class="listing-heading">
