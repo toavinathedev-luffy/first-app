@@ -16,12 +16,18 @@ import { HousingService } from '../housing.service';
           placeholder="Filter by city"
           #filter
         />
-        <button type="button" class="primary">Search</button>
+        <button
+          type="button"
+          class="primary"
+          (click)="filterResults(filter.value)"
+        >
+          Search
+        </button>
       </form>
     </section>
     <section class="results">
       <app-housing-location
-        *ngFor="let housingLocation of housingLocationList"
+        *ngFor="let housingLocation of filteredLocationList"
         [housingLocation]="housingLocation"
       ></app-housing-location>
     </section>
