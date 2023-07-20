@@ -6,90 +6,18 @@ import { HousingLocation } from './housing-location-interf';
 })
 export class HousingService {
   readonly baseUrl = '../assets';
-  housingLocationList: HousingLocation[] = [
-    {
-      id: 0,
-      name: 'Acne Fresh start housing',
-      city: 'Chicago',
-      state: 'IL',
-      photo: `${this.baseUrl}/images (8).jpeg`,
-      availableUnits: 4,
-      wifi: true,
-      laundry: true,
-    },
-    {
-      id: 1,
-      name: 'A113 Transtional Housing',
-      city: 'santa Monica',
-      state: 'CA',
-      photo: `${this.baseUrl}/images (9).jpeg`,
-      availableUnits: 0,
-      wifi: false,
-      laundry: true,
-    },
-    {
-      id: 2,
-      name: 'Warm Beds Housing support',
-      city: 'Juneau',
-      state: 'AK',
-      photo: `${this.baseUrl}/images (10).jpeg`,
-      availableUnits: 1,
-      wifi: false,
-      laundry: false,
-    },
-    {
-      id: 3,
-      name: 'Homestaedy Housing',
-      city: 'Chicago',
-      state: 'IL',
-      photo: `${this.baseUrl}/images (11).jpeg`,
-      availableUnits: 1,
-      wifi: true,
-      laundry: false,
-    },
-    {
-      id: 4,
-      name: 'Happy Homes Group',
-      city: 'Gary',
-      state: 'IN',
-      photo: `${this.baseUrl}/images (12).jpeg`,
-      availableUnits: 1,
-      wifi: false,
-      laundry: false,
-    },
-    {
-      id: 5,
-      name: 'Hopeful Appartement Group',
-      city: 'Oakland',
-      state: 'CA',
-      photo: `${this.baseUrl}/téléchargement (26).jpeg`,
-      availableUnits: 2,
-      wifi: true,
-      laundry: true,
-    },
-    {
-      id: 6,
-      name: 'Warm Beds Housing support',
-      city: 'Copakabama',
-      state: 'AK',
-      photo: `${this.baseUrl}/téléchargement (27).jpeg`,
-      availableUnits: 3,
-      wifi: false,
-      laundry: false,
-    },
-  ];
-  getAllHousingLocations(): HousingLocation[] {
-    return this.housingLocationList;
+  url = 'http://localhost:3000/locations';
+  async getAllHousingLocations(): Promise<HousingLocation[]> {
+    const data = await fetch(this.url);
+    return (await data.json()) ?? [];
   }
-  getHousingLocationById(id: number): HousingLocation | undefined {
-    return this.housingLocationList.find(
-      (housingLocation) => housingLocation.id === id
-    );
+  async getHousingLocationById(
+    id: number
+  ): Promise<HousingLocation | undefined> {
+    const data = await fetch(`${this.url}/${id}`);
+    return (await data.json()) ?? {};
   }
   submitApplication(firstName: string, lastName: string, email: string) {
-    console.log(
-      `Homes application received : firstName: ${firstName},lastName:${lastName},email:${email}.`
-    );
+    console.log(firstName, lastName, email);
   }
-  constructor() {}
 }
