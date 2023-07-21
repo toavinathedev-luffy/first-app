@@ -5,7 +5,6 @@ import { HousingLocation } from './housing-location-interf';
   providedIn: 'root',
 })
 export class HousingService {
-  readonly baseUrl = '../assets';
   url = 'http://localhost:3000/locations';
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url);
